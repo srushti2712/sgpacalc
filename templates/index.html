@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SGPA Calculator</h1>
+        <form method="post">
+            <h2>Enter Grades for Subjects</h2>
+            <div class="subject-inputs">
+                <label for="dsp">DSP:</label>
+                <input type="text" id="dsp" name="dsp" required>
+
+                <label for="es">ES:</label>
+                <input type="text" id="es" name="es" required>
+
+                <label for="dc">DC:</label>
+                <input type="text" id="dc" name="dc" required>
+
+                <label for="em">EM:</label>
+                <input type="text" id="em" name="em" required>
+
+                <label for="dsa">DSA:</label>
+                <input type="text" id="dsa" name="dsa" required>
+
+                <label for="fna">FnA:</label>
+                <input type="text" id="fna" name="fna" required>
+            </div>
+
+            <h2>Enter Grades for Labs</h2>
+            <div class="lab-inputs">
+                <label for="dsp_lab">DSP Lab:</label>
+                <input type="text" id="dsp_lab" name="dsp_lab" required>
+
+                <label for="es_lab">ES Lab:</label>
+                <input type="text" id="es_lab" name="es_lab" required>
+
+                <label for="dc_lab">DC Lab:</label>
+                <input type="text" id="dc_lab" name="dc_lab" required>
+
+                <label for="mp_lab">MP Lab:</label>
+                <input type="text" id="mp_lab" name="mp_lab" required>
+            </div>
+
+            <button type="submit">Calculate SGPA</button>
+        </form>
+        {% if sgpa is not none %}
+            <p id="result">Your SGPA is: {{ sgpa|round(2) }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
