@@ -11,7 +11,7 @@ def get_grade_point(grade):
         'B+': 7,
         'B': 6,
         'C+': 5,
-        'C': 4
+        'C': 3
     }
     return grade_points.get(grade.upper(), 0)
 
